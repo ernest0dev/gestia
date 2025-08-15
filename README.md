@@ -1,129 +1,117 @@
 # Gestia
 
-**Gestia** is currently being developed for the internal use of the marketing department of a multi-branch retail company.  
-It’s designed to streamline everyday logistics, improve internal communication, and centralize tools across various teams (e.g., Events, Design, Digital).  
-This project aims to reduce manual overhead and provide intelligent automation with customizable integrations (Google Drive, Adobe CC, etc.).
+**Gestia** is an open-source platform currently in development, designed to optimize the internal operations of marketing teams within multi-branch organizations.  
+Its primary goal is to streamline workflows, enhance communication between subteams, and centralize access to essential tools (e.g., Events, Design, Digital).  
+With built-in automation and optional integrations (Google Drive, Adobe CC, and more), Gestia aims to reduce repetitive manual work while improving overall efficiency.
 
 ---
 
-## 🚀 Project Status
+## Project Status
 
-This project is in its early planning and development phase.  
-More detailed documentation will be added as features are implemented.
+Gestia is in the **early planning and development phase**.  
+Core features are being built following a structured roadmap, with public documentation updated as progress continues.
 
-## 📋 Project Management
+📖 Detailed information is available in the [project Wiki](https://github.com/ernest0dev/gestia/wiki).  
+📌 Task tracking and milestones are managed via the [GitHub Project Board](https://github.com/users/ernest0dev/projects/2).
 
-You can view the active roadmap and tasks on our GitHub Project board:  
-👉 [Gestia GitHub Project](https://github.com/users/ernest0dev/projects/2)
+---
 
-Issues are categorized by feature and linked to pull requests for better traceability.
-
-## 🧪 Requirements
+## Requirements
 
 - Node.js 18+
 - Git
 - MySQL
-- .env file with appropriate API keys and config
+- `.env` file with required API keys and configuration
 
 ---
 
-## 📦 Installation (for development)
-
+## Installation (Development Setup)
+#### Clone repository
 ```bash
-# Clone the repository
 git clone https://github.com/ernest0dev/gestia.git
 cd gestia
-
-# Install dependencies
-cd backend
-npm install
-
-cd ../frontend
-npm install
 ```
-
-## Running the Project (development mode)
-
+#### Install backend dependencies
 ```bash
-# Run backend
+cd backend
+npm install
+```
+#### Install frontend dependencies
+```bash
+cd ../frontend
+npm install
+```
+
+## Running the Project (Development Mode)
+#### Run backend
+```bash
 cd backend
 npm run dev
-
-# Run frontend
+```
+#### Run frontend
+```bash
 cd ../frontend
 npm run dev
 ```
 
-## General Project Structure
+## Branching Strategy
+- `main` → Stable production-ready code (protected branch)
+- `dev` → Integration branch for testing before merging into main
+- `feature/*` → New features
+- `fix/*` → Bug fixes
+- `docs/*` → Documentation changes
+- `hotfix/*` → Critical fixes deployed directly to production
 
-- `main`: Protected branch. Contains stable, production-ready code.
-- `dev`: Integration branch. All developments are merged here before going to `main`.
-- `feature/*`: New features.
-- `fix/*`: Bug fixes.
-- `docs/*`: Documentation changes.
-- `hotfix/*`: Critical issues that require going directly to production.
-
-## Development Flow
-
-1. Clone the repository and enter the branch `dev`
+## Development Workflow
+1. Checkout `dev` branch
 ```bash
 git checkout dev
 git pull origin dev
 ```
-
-2. Create a new functional branch
+3. Create a new branch
 ```bash
-git checkout -b feature/name
+git checkout -b feature/short-description
 ```
-Use semantic prefixes:
-| Type | Prefix | Example |
+
+### Semantic branch prefixes:
+| Type          | Prefix     | Example                 |
 | ------------- | ---------- | ----------------------- |
-| Function | `feature/` | `feature/auth-login` |
-| Fix | `fix/` | `fix/error-login` |
-| Documentation | `docs/` | `docs/api-integrations` |
-| Experiment | `test/` | `test/adobe-api-poc` |
+| Feature       | `feature/` | `feature/auth-login`    |
+| Fix           | `fix/`     | `fix/error-login`       |
+| Documentation | `docs/`    | `docs/api-integrations` |
+| Experiment    | `test/`    | `test/adobe-api-poc`    |
 
 3. Readable commits
 ```bash
 git add .
 git commit -m "feat: implements login and user authentication"
 ```
-
-4. Upload the branch and create the PR
+5. Push branch & create PR
 ```bash
 git push origin feature/auth-login
 ```
-- Make a Pull Request to `dev`
-- Associate the PR with an Issue (`Closes #X`)
-- Add tags and a clear description
+- PR must target dev
+- Link the PR to its Issue (Closes #X)
+- Add labels and a clear description
 
----
+## Pull Request Rules
+- Clearly explain what the PR does
+- Only modify files related to the assigned task
+- Include screenshots or examples if relevant
+- If UI changes were made, attach visual previews (images/GIFs)
 
-## Rules for Pull Requests
-
-- Clearly describe what the PR does.
-- Do not touch files outside of the assigned role.
-- Include screenshots or evidence, if applicable.
-- If the UI has been modified, add screenshots or GIFs.
-
----
-
-## Contributing
-I appreciate your contributions!
-- If you want to contribute, create a fork, follow this README, and submit your PR from dev.
-- For suggestions, create an Issue.
-- Everything must be documented and follow best practices.
-Please fork the repository and submit a pull request with your suggestions.
+Contributing
+We welcome contributions!
+- Fork the repository, follow the CONTRIBUTING.md guidelines, and submit your PR to `dev`.
+- For suggestions or bug reports, open an Issue with enough detail to reproduce or understand your proposal.
+- Maintain code style and documentation standards.
 
 ## License
-
-This project is released under a customized MIT-style license:
-
-- ✅ You may view, fork, and contribute to this project freely.
-- ✅ You may reuse parts of the code for educational or personal use.
-- ❌ **Commercial use is not allowed** under this license.
-- 🔁 To use it commercially, you must either:
-  - Request explicit permission from the maintainer, or
-  - Fork the project and change the license accordingly.
-
-For full legal terms, please refer to the `LICENSE` file.
+This project is distributed under a customized MIT-style license:
+-  Free to view, fork, and contribute
+-  Code reuse allowed for educational or personal use
+- Commercial use prohibited without explicit permission
+- For commercial usage:
+  - Request authorization from the maintainer or
+  - Fork the project and apply your own license
+Full terms available in the LICENSE file.

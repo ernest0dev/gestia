@@ -114,4 +114,6 @@ This project is distributed under a customized MIT-style license:
 - For commercial usage:
   - Request authorization from the maintainer or
   - Fork the project and apply your own license
+ 
+
 Full terms available in the LICENSE file.
